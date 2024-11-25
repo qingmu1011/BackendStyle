@@ -1,0 +1,23 @@
+$--colors: (
+  "primary": ( // "base": #0055ff,
+    "base": #3374ff,
+  ),
+);
+
+$--bg-color: (
+  'overlay': #0f1836,
+  // 'overlay': #282f44,
+  'page': #020923,
+  'member': var(--el-bg-color-overlay),
+  'report': var(--el-bg-color-overlay),
+  'device': var(--el-bg-color-overlay),
+  // '': #262f48,
+  '': #0f1836,
+  'table-striped': var(--el-bg-color),
+);
+
+@forward "element-plus/theme-chalk/src/dark/var.scss" with ($colors: $--colors,
+  $bg-color: $--bg-color,
+);
+
+@use "element-plus/theme-chalk/src/dark/css-vars.scss";

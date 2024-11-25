@@ -1,0 +1,9 @@
+{
+  "Version": "5.3.1",
+  "Title": "电费寻优",
+  "FixedHeader": true,
+  "VITE_PROXY_SERVER_PORT": "9090",
+  "VITE_PROXY_SERVER_API_PREFIX": "/dev-api",
+  "VITE_PROXY_SERVER_TARGET": "https://sadief.bornya.com",
+  "VITE_TDT_TK": ""
+}
