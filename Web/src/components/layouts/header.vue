@@ -60,18 +60,16 @@ const closePassword = () => {
       </el-input>
     </div>
     <div class="header-right">
-      <el-switch
-        v-model="switchValue"
-        :active-action-icon="Moon"
-        :inactive-action-icon="Sunny"
-        @change="changeTheme"
-      />
+      <div class="theme" :class="[isDark ? 'dark' : '']" @click="changeTheme(!isDark)">
+        <i class="iconfont icon-daytime-mode"></i>
+      </div>
       <div>
         <!-- 退出登录 -->
         <el-dropdown trigger="click">
           <div class="avatar">
             <img :src="userAvatar" :style="avatarsStyle" />
             <p v-if="name" class="dark:text-white">{{ name }}</p>
+            <i class="iconfont icon-down"></i>
           </div>
           <template #dropdown>
             <el-dropdown-menu>
@@ -97,9 +95,7 @@ const closePassword = () => {
   </div>
 </template>
 <style lang="scss" scoped>
-:deep(.el-input__wrapper){
-  box-shadow: none;
-}
+
 .header-container {
   height: inherit;
   display: flex;
@@ -115,21 +111,62 @@ const closePassword = () => {
   }
 
   .header-left {
-    
+    :deep(.el-input__wrapper){
+      box-shadow: none;
+      font-size: 16px;
+      background: var(--el-bg-color);
+      &:hover{
+        box-shadow: 0 0 0 1px var(--el-input-hover-border-color) inset;
+      }
+      &.is-focus{
+        box-shadow: 0 0 0 1px var(--el-input-focus-border-color) inset;
+      }
+    }
   }
 
   .header-right {
     display: flex;
     align-items: center;
+    .theme{
+      width: 42px;
+      height: 42px;
+      border-radius: var(--el-border-radius-base);
+      background: var(--el-bg-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: .3s;
+      &:hover{
+        background: var(--el-menu-hover-bg-color);
+      }
+      &.dark{
+        // todo
+      }
+    }
     .avatar {
       margin-left: 20px;
       cursor: pointer;
       display: flex;
       align-items: center;
+      height: 42px;
+      border-radius: var(--el-border-radius-base);
+      background: var(--el-bg-color);
+      padding: 0 15px;
+      color: var(--el-text-color-primary);
+      transition: .3s;
+      &:hover{
+        background: var(--el-menu-hover-bg-color);
+      }
       img {
-        width: 38px;
-        height: 38px;
+        width: 28px;
+        height: 28px;
         border-radius: 50%;
+      }
+      .iconfont{
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 10px;
       }
     }
     .iconfont {

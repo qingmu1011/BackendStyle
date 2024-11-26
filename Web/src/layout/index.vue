@@ -24,9 +24,10 @@ import "animate.css";
 .common-layout {
   height: 100%;
   background-color: var(--el-bg-color-page);
-  padding: 20px;
+  padding: 0px 20px 20px 20px;
   .common-aside {
     border-radius: 20px;
+    margin-top: 20px;
     // border-right: 1px solid var(--el-border-color-light);
     // padding: 0 20px;
     background: var(--el-bg-color);
@@ -38,13 +39,33 @@ import "animate.css";
     position: relative;
     padding: 0;
     margin-left: 25px;
+    padding-top: 90px;
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #dddee0;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #c7c9cc;
+      transition: all 0.3s;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 4px;
+    }
     .common-header {
       padding: 0;
-      position: absolute;
-      top: 0;
+      position: fixed;
+      top: 0px;
+      right: 0px;
+      padding: 20px 20px 0;
       // border-bottom: 1px solid var(--el-border-color-light);
       // background: var(--el-bg-color);
-      width: 100%;
+      width: calc(100% - 260px);
+      height: 80px;
       background-image: radial-gradient(transparent 1px,var(--el-bg-color-page) 1px);
       background-size: 4px 4px;
       backdrop-filter: saturate(50%) blur(4px);

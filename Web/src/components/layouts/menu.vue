@@ -32,11 +32,9 @@ const activePath = computed(() => {
 <template>
   <div class="menu-container">
     <div class="logo">
-      <!-- {{ config.Title }} -->
-      <span class="master">SADI</span>
-      <!-- <span style="font-size: 18px"> 建筑光伏</span> -->
-      <span class="assistant">System</span>
-      <div class="title">建筑光伏辅助运行系统</div>
+      <div class="logo-icon">
+        LOGO
+      </div>
     </div>
     <el-scrollbar>
       <el-menu
@@ -89,7 +87,8 @@ const activePath = computed(() => {
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 15px 0px 15px 15px;
+  padding: 25px 0px 25px 15px;
+  
   .menu-img{
     margin-top: 15px;
     padding-right: 15px;
@@ -102,44 +101,23 @@ const activePath = computed(() => {
   }
 }
 .logo {
-  height: 60px;
-  // line-height: 60px;
-  // text-align: center;
-  // color: #333;
-  // font-size: 30px;
-  // font-weight: bold;
-  // background-color: #333;
-  // margin-bottom: 20px;
-  // background: linear-gradient(324deg, rgba(0,85,255,1) 38%, rgba(227,197,54,1) 74%);
-  // background-clip: text;
-  // -webkit-background-clip: text;
-  // color: transparent;
-  // -webkit-text-stroke: 1.5px var(--el-color-primary); 
-  // color: var(--el-color-success);
-  font-style: italic;
-  padding: 10px 20px 0;
-  font-weight: bold;
-  white-space: nowrap;
-  font-size: 22px;
-  .master{
-      color: var(--el-color-primary);
-      font-size: 22px;
-    span{
-      font-weight: bold;
-      font-size: 25px;
-      color: var(--el-color-primary);
-    }
-  }
-  .assistant{
-    margin-left: 3px;
-    font-weight: normal;
-    font-size: 12px;
-    color: var(--el-text-color-placeholder);
-    // color: var(--el-color-primary-light-5)
-  }
-  .title {
-    font-size: 15px;
-    color: var(--el-text-color-secondary);
+  height: 80px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  .logo-icon {
+    font-style: italic;
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 20px;
+    background: var(--el-color-primary-light-3);
+    height: 56px;
+    padding: 0 15px;
+    border-radius: var(--el-border-radius-base);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
