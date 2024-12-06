@@ -24,58 +24,25 @@ export default {
             }
         },
         {
-            path: "/loadsForecaster",
-            name: "loadsForecaster",
-            component: () => import("~/views/businessComponents/loadsForecaster/index.vue"),
+            path: "/myMenu",
+            name: "myMenu",
+            component: () => import("~/views/businessComponents/myMenu/index.vue"),
             meta: {
-                title: "建筑负载预测",
+                title: "我是菜单",
                 icon: 'icon-shiligongchang',
                 enTitle: "Building load prediction"
-            }
-        },
-        {
-            path: "/photovoltaicForecaster",
-            name: "photovoltaicForecaster",
-            component: () => import("~/views/businessComponents/photovoltaicForecaster/index.vue"),
-            meta: {
-                title: "光伏发电预测",
-                icon: 'icon-daytime-mode',
-                enTitle: "Photovoltaic power generation prediction"
-            }
-        },
-        {
-            path: "/tariffForecaster",
-            name: "tariffForecaster",
-            component: () => import("~/views/businessComponents/tariffForecaster/index.vue"),
-            meta: {
-                title: "电价设置",
-                icon: 'icon-flashlight',
-                enTitle: "Electricity Price Setting"
-            }
-        },
-        
-        {
-            path: "/optimiz",
-            name: "optimiz",
-            component: parentLayout,
-            meta: {
-                title: "电费寻优",
-                icon: 'icon-favorites',
-                enTitle: "Optimizing electricity prices"
             },
-            children: [
+            children:[
                 {
-                    path: "/scsacascs",
-                    name: "scsacascs",
-                    component: parentLayout,
+                    path: "/myMenu/child",
+                    name: "myMenuChild",
+                    component: () => import("~/views/businessComponents/home/index.vue"),
                     meta: {
-                        title: "电费寻优",
-                        // icon: 'icon-favorites',
-                        enTitle: "Optimizing electricity prices"
-                    },
+                        title: "我是子菜单",
+                    }
                 }
             ]
-        },
+        }
 
     ]
 } satisfies RouteConfigsTable;

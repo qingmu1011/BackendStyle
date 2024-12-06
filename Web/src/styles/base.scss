@@ -1,5 +1,4 @@
 @import url('/src/assets/iconfont/iconfont.css');
-@import url('/src/assets/fontIcon/iconfont.css');
 // @use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;
 
 *{
@@ -153,10 +152,16 @@
 
     .el-overlay{
         backdrop-filter: blur(2px);
+        border: none;
     }
 
+    // 弹出框
     .el-popper{
+        --el-dropdown-menu-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
         --el-popper-border-radius: var(--el-border-radius-base);
+        .el-popper__arrow::before{
+            border: none;
+        }
     }
 
     .el-descriptions{
@@ -170,6 +175,16 @@
             .el-descriptions__content.el-descriptions__cell.is-bordered-content{
                 color: var(--el-text-color-regular);
             }
+        }
+    }
+
+    // 下拉框
+    .el-dropdown-menu{
+        padding: 10px;
+        border: none;
+        .el-dropdown-menu__item{
+            border-radius: var(--el-border-radius-small);
+            min-width: 120px;
         }
     }
 }

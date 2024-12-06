@@ -49,7 +49,7 @@ getPlatformConfig(app).then(async config => {
     setupStore(app);
     app.use(router);
     await router.isReady();
-    app.use(MotionPlugin).use(ElementPlus, {
+    app.use(ElementPlus, {
         locale: zhCn
     });
     // .use(PureDescriptions)
